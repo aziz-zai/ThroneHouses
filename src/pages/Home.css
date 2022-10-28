@@ -6,9 +6,11 @@
     align-items: flex-start;
     padding: 0 30px;
     min-height: 100vh;
-    height: auto;
+    height: fit-content;
     position: relative;
     z-index: 1;
+    flex-direction: column;
+    padding-bottom: 3rem;
 }
 
 .homeContainer:before{
@@ -20,6 +22,11 @@
     bottom: 0;
     background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent);
     z-index: 2;
+}
+
+.homeBody{
+    margin-top: 6rem;
+    z-index: 3;
 }
 
 .homeBackground{
@@ -34,8 +41,6 @@
 }
 
 .CardWrapper{
-    margin-top: 6rem;
-    z-index:999;
     display: flex;
     justify-content: center;
     align-items:flex-start;
@@ -44,3 +49,46 @@
     gap: 1rem;
     font-size: 1.4rem;
 }
+
+.paginationWrapper{
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: auto;
+    font-size: 0.5rem;
+    margin-top: 4rem;
+}
+
+.paginationBttns {
+
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .paginationBttns a:hover {
+    color: white;
+    background-color: rgba(137, 137, 137, 0.5);
+  }
+  
+  .paginationActive a {
+    color: white;
+    background-color: rgba(138, 138, 138, 0.478);
+    scale: 2;
+  }
+  
+  .paginationDisabled a {
+    color: rgb(128, 128, 128);
+    background-color: rgba(128, 128, 128, 0.118);
+  }

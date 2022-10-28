@@ -15,7 +15,7 @@ export class NavBar extends Component {
     return (
       <div className={scrollNav ? "navBlack" : "navTrans"}>
         <div className="navContainer">
-          <Link to="/MeinProfil" className="navLink">
+          <Link to="/" className="navLink">
             <div className="navTitle">House Of Throne</div>
           </Link>
           <ul className="navMenu">

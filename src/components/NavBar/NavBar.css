@@ -69,6 +69,7 @@
     scale: 1.2
 }
 
+
 @media screen and (max-width:300px){
     .navTitle{
         font-size: 1rem;

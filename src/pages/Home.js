@@ -1,4 +1,6 @@
+import LinearProgress from "@mui/material/LinearProgress";
 import React, { Component } from "react";
+import ReactPaginate from "react-paginate";
 import GotApi from "../api/GotApi";
 import Card from "../components/Card/Index";
 import background from "../media/background.jpeg";
@@ -10,32 +12,26 @@ export class Home extends Component {
     // Init the state
     this.state = {
       listOfHouses: [],
-      loading: false,
-      pageNumber: 1,
     };
   }
-  loadAllHouses = () => {
+  loadAllHouses = (pageNumber) => {
     GotApi.getAPI()
-      .getAllHouses(this.state.pageNumber)
+      .getAllHouses(pageNumber)
       .then((listOfHouses) =>
         this.setState({
           listOfHouses: listOfHouses,
-          loading: false,
         })
       )
-      .catch((e) =>
-        this.setState({
-          // Reset state with error from catch
-          loading: false,
-        })
-      );
-    // set loading to true
-    this.setState({
-      loading: true,
-    });
+      .catch((e) => console.log("error", e));
   };
+
+  changePage = ({ selected }) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    this.loadAllHouses(selected + 1);
+  };
+
   componentDidMount() {
-    this.loadAllHouses();
+    this.loadAllHouses(1);
   }
   render() {
     return (
@@ -43,12 +39,26 @@ export class Home extends Component {
         <div className="homeBackground">
           <img src={background}></img>
         </div>
-        <div className="CardWrapper">
-          {this.state.listOfHouses.map((house) => (
-            <Card houseName={house.name} />
-          ))}
+        <div className="homeBody">
+          <div className="CardWrapper">
+            {this.state.listOfHouses.map((house) => (
+              <Card key={house.url} houseName={house.name} />
+            ))}
+          </div>
         </div>
-        <div className="paginationWrapper"></div>
+        <div className="paginationWrapper">
+          <ReactPaginate
+            previousLabel={"Previous"}
+            nextLabel={"Next"}
+            pageCount={31}
+            onPageChange={this.changePage}
+            containerClassName={"paginationBttns"}
+            previousLinkClassName={"previousBttn"}
+            nextLinkClassName={"nextBttn"}
+            disabledClassName={"paginationDisabled"}
+            activeClassName={"paginationActive"}
+          />
+        </div>
       </div>
     );
   }
