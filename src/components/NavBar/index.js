@@ -1,7 +1,9 @@
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import title from "../../media/title.png";
 import "./NavBar.css";
 
 export class NavBar extends Component {
@@ -11,18 +13,15 @@ export class NavBar extends Component {
   render() {
     const { user, dbuser, toggle } = this.props;
     return (
-      <div className="navBlack">
+      <div className="navWrapper">
         <div className="navContainer">
           <Link to="/MeinProfil" className="navLink">
-            <div className="navLogo">HouseOfThrones</div>
+            <div className="navTitle">House Of Throne</div>
           </Link>
-          <div className="navMobile" onClick={this.handleOpenStateChange}>
-            <MenuIcon />
-          </div>
           <ul className="navMenu">
             <li className="navItem">
               <Link to="/MeineProjekte" className="navLink">
-                Projekte
+                <SearchIcon />
               </Link>
             </li>
           </ul>

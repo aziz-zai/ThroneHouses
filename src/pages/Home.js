@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import GotApi from "../api/GotApi";
+import background from "../media/background.jpeg";
+import "./Home.css";
 
 export class Home extends Component {
   constructor(props) {
@@ -35,7 +37,10 @@ export class Home extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="homeContainer">
+        <div className="homeBackground">
+          <img className="homeVideo" src={background}></img>
+        </div>
         <div>Home</div>
         <div>
           {this.state.listOfHouses.map((house) => (
