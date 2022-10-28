@@ -1,4 +1,3 @@
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import PropTypes from "prop-types";
 import React, { Component } from "react";

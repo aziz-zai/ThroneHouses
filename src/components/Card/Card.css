@@ -3,20 +3,32 @@
     border: 1px solid rgba(255, 255, 255, 0.681);
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    padding: 1rem;
+    padding: 2rem;
     font-family: "Game of Thrones";
 }
 
 .housePreTitle{
     font-family: "Game of Thrones";
     color: white;
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 
 .houseTitle{
     font-family: "Game of Thrones";
     color: white;
-    font-size: 1rem;
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width:1500px){
+    .houseTitle{
+        font-size: 1rem;
+    }
+    .housePreTitle{
+        font-size: 0.8rem;
+    }
+    .houseCard{
+        padding: 1.5rem
+    }
 }
 
 @media screen and (max-width:700px){
@@ -26,4 +38,10 @@
     .housePreTitle{
         font-size: 0.5rem;
     }
+
+    .houseCard{
+        padding: 0.7rem
+    }
 }
+
+

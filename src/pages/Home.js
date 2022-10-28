@@ -57,6 +57,8 @@ export class Home extends Component {
             nextLinkClassName={"nextBttn"}
             disabledClassName={"paginationDisabled"}
             activeClassName={"paginationActive"}
+            pageRangeDisplayed={1}
+            marginPagesDisplayed={1}
           />
         </div>
       </div>

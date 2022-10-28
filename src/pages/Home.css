@@ -46,8 +46,13 @@
     align-items:flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
-    font-size: 1.4rem;
+    gap: 2.5rem;
+}
+
+@media screen and (max-width:1600px){
+    .CardWrapper{
+        gap: 1rem;
+    }
 }
 
 .paginationWrapper{
@@ -92,3 +97,15 @@
     color: rgb(128, 128, 128);
     background-color: rgba(128, 128, 128, 0.118);
   }
+
+  
+@media screen and (max-width:340px){
+    .paginationWrapper{
+        font-size: 0.5rem;
+    }
+    .paginationBttns a {
+        padding: 7px;
+        margin: 6px;
+    }
+}
+
