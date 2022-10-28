@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
+import Home from "./pages/Home";
 
 export class App extends Component {
   constructor(props) {
@@ -38,6 +34,11 @@ export class App extends Component {
         <Router>
           <SideBar toggle={this.handleOpenStateChange} Open={this.state.Open} />
           <NavBar toggle={this.handleOpenStateChange} />
+          <Routes>
+            <Route path="/" element={<Home />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+          </Routes>
         </Router>
       </>
     );

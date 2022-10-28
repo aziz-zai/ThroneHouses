@@ -11,10 +11,10 @@ export class NavBar extends Component {
   render() {
     const { user, dbuser, toggle } = this.props;
     return (
-      <div className={this.state.nav}>
+      <div className="navBlack">
         <div className="navContainer">
           <Link to="/MeinProfil" className="navLink">
-            <div className="navLogo">project.one</div>
+            <div className="navLogo">HouseOfThrones</div>
           </Link>
           <div className="navMobile" onClick={this.handleOpenStateChange}>
             <MenuIcon />

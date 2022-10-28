@@ -1,9 +1,17 @@
 require("file-loader?name=[name].[ext]!./index.html");
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect } from "react";
+import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import "./App.css";
 
-const appElement = document.getElementById("app");
+function AppWithCallbackAfterRender() {
+  useEffect(() => {
+    console.log("rendered");
+  });
 
-ReactDOM.render(<App />, appElement);
+  return <App tab="home" />;
+}
+
+const container = document.getElementById("app");
+const root = createRoot(container);
+root.render(<AppWithCallbackAfterRender />);
