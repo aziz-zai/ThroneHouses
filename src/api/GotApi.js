@@ -1,3 +1,5 @@
+import { UTurnLeft } from "@mui/icons-material";
+
 export default class GotApi {
   // Singelton instance
   static #api = null;
@@ -10,6 +12,7 @@ export default class GotApi {
     `${this.#OneServerBaseURL}/houses?page=${page}&pageSize=15`;
   #getHouseByName = (houseName) =>
     `${this.#OneServerBaseURL}/houses?name=${houseName}`;
+  #getAttributesForHouse = () => `${attributeURL}`;
 
   /**
    * Get the Singelton instance
@@ -52,6 +55,16 @@ export default class GotApi {
 
   getHouseByName(houseNumber) {
     return this.#fetchAdvanced(this.#getHouseByName(houseNumber)).then(
+      (responseJSON) => {
+        return new Promise(function (resolve) {
+          resolve(responseJSON);
+        });
+      }
+    );
+  }
+
+  getAttributesForHouse(attributeURL) {
+    return this.#fetchAdvanced(this.#getAttributesForHouse(attributeURL)).then(
       (responseJSON) => {
         return new Promise(function (resolve) {
           resolve(responseJSON);

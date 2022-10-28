@@ -2,7 +2,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import title from "../../media/title.png";
 import "./NavBar.css";
 
 export class NavBar extends Component {
