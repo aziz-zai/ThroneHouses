@@ -5,17 +5,19 @@
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     padding: 2rem;
     font-family: "Game of Thrones";
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.104);
 }
 
 .housePreTitle{
     font-family: "Game of Thrones";
-    color: white;
+    color: rgb(195, 193, 181);
     font-size: 1rem;
 }
 
 .houseTitle{
     font-family: "Game of Thrones";
-    color: white;
+    color: rgb(195, 193, 181);
     font-size: 1.4rem;
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
+import HouseDetails from "./pages/HouseDetails";
 
 export function App() {
   const [scrollNav, setScrollNav] = useState(false);
@@ -23,7 +24,8 @@ export function App() {
       <Router>
         <NavBar scrollNav={scrollNav} />
         <Routes>
-          <Route path="/" element={<Home />}>
+          <Route>
+            <Route path="/Details/:houseName" element={<HouseDetails />} />
             <Route path="/" element={<Home />} />
           </Route>
         </Routes>

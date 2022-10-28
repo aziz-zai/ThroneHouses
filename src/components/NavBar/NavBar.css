@@ -42,6 +42,7 @@
     height: auto;
     font-family: "Game of Thrones";
     font-size: 1.5rem;
+    color: rgb(195, 193, 181)
 }
 
 .navMenu{
@@ -56,7 +57,7 @@
 }
 
 .navLink{
-    color: white;
+    color: rgb(195, 193, 181);
     cursor: pointer;
     display: flex;
     align-items: center;

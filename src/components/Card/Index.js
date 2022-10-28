@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 
 export class Card extends Component {
@@ -22,10 +23,10 @@ export class Card extends Component {
   render() {
     const { houseName } = this.props;
     return (
-      <div className="houseCard">
+      <Link to={`/Details/${houseName}`} className="houseCard">
         <div className="housePreTitle">House</div>
         <div className="houseTitle">{this.removeFirstWord(houseName)}</div>
-      </div>
+      </Link>
     );
   }
 }

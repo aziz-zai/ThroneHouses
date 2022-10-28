@@ -8,6 +8,8 @@ export default class GotApi {
   //House related
   #getAllHouses = (page) =>
     `${this.#OneServerBaseURL}/houses?page=${page}&pageSize=15`;
+  #getHouseByName = (houseName) =>
+    `${this.#OneServerBaseURL}/houses?name=${houseName}`;
 
   /**
    * Get the Singelton instance
@@ -40,6 +42,16 @@ export default class GotApi {
 
   getAllHouses(page) {
     return this.#fetchAdvanced(this.#getAllHouses(page)).then(
+      (responseJSON) => {
+        return new Promise(function (resolve) {
+          resolve(responseJSON);
+        });
+      }
+    );
+  }
+
+  getHouseByName(houseNumber) {
+    return this.#fetchAdvanced(this.#getHouseByName(houseNumber)).then(
       (responseJSON) => {
         return new Promise(function (resolve) {
           resolve(responseJSON);

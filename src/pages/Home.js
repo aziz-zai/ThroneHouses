@@ -42,7 +42,7 @@ export class Home extends Component {
         <div className="homeBody">
           <div className="CardWrapper">
             {this.state.listOfHouses.map((house) => (
-              <Card key={house.url} houseName={house.name} />
+              <Card key={house.url} houseName={house.name} url={2} />
             ))}
           </div>
         </div>
