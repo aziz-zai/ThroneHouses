@@ -1,8 +1,8 @@
 @import url(//db.onlinewebfonts.com/c/97c4b25dc74e0ab045154e75a8fdd69d?family=Game+of+Thrones);
-.navWrapper{
+.navTrans{
     background: transparent;
     height: 5em;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,18 @@
     z-index: 1000;
     width: 100%;
 }
-
+.navBlack{
+    background: #292929;
+    height: 5em;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
 
 .navContainer{
     display: flex;

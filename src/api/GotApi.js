@@ -6,7 +6,8 @@ export default class GotApi {
   #OneServerBaseURL = "https://anapioficeandfire.com/api";
 
   //House related
-  #getAllHouses = () => `${this.#OneServerBaseURL}/houses`;
+  #getAllHouses = (page) =>
+    `${this.#OneServerBaseURL}/houses?page=${page}&pageSize=15`;
 
   /**
    * Get the Singelton instance
@@ -37,11 +38,13 @@ export default class GotApi {
    * User related
    */
 
-  getAllHouses() {
-    return this.#fetchAdvanced(this.#getAllHouses()).then((responseJSON) => {
-      return new Promise(function (resolve) {
-        resolve(responseJSON);
-      });
-    });
+  getAllHouses(page) {
+    return this.#fetchAdvanced(this.#getAllHouses(page)).then(
+      (responseJSON) => {
+        return new Promise(function (resolve) {
+          resolve(responseJSON);
+        });
+      }
+    );
   }
 }

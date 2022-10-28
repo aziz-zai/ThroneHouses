@@ -3,9 +3,10 @@
     background: #0c0c0c;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 30px;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     position: relative;
     z-index: 1;
 }
@@ -32,3 +33,14 @@
     overflow: hidden;
 }
 
+.CardWrapper{
+    margin-top: 6rem;
+    z-index:999;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 1.4rem;
+}

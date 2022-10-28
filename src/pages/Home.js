@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GotApi from "../api/GotApi";
+import Card from "../components/Card/Index";
 import background from "../media/background.jpeg";
 import "./Home.css";
 
@@ -10,11 +11,12 @@ export class Home extends Component {
     this.state = {
       listOfHouses: [],
       loading: false,
+      pageNumber: 1,
     };
   }
   loadAllHouses = () => {
     GotApi.getAPI()
-      .getAllHouses()
+      .getAllHouses(this.state.pageNumber)
       .then((listOfHouses) =>
         this.setState({
           listOfHouses: listOfHouses,
@@ -39,14 +41,14 @@ export class Home extends Component {
     return (
       <div className="homeContainer">
         <div className="homeBackground">
-          <img className="homeVideo" src={background}></img>
+          <img src={background}></img>
         </div>
-        <div>Home</div>
-        <div>
+        <div className="CardWrapper">
           {this.state.listOfHouses.map((house) => (
-            <h1>{house.name}</h1>
+            <Card houseName={house.name} />
           ))}
         </div>
+        <div className="paginationWrapper"></div>
       </div>
     );
   }

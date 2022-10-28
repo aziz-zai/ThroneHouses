@@ -11,9 +11,9 @@ export class NavBar extends Component {
     this.props.toggle();
   };
   render() {
-    const { user, dbuser, toggle } = this.props;
+    const { scrollNav } = this.props;
     return (
-      <div className="navWrapper">
+      <div className={scrollNav ? "navBlack" : "navTrans"}>
         <div className="navContainer">
           <Link to="/MeinProfil" className="navLink">
             <div className="navTitle">House Of Throne</div>
@@ -21,7 +21,7 @@ export class NavBar extends Component {
           <ul className="navMenu">
             <li className="navItem">
               <Link to="/MeineProjekte" className="navLink">
-                <SearchIcon />
+                <SearchIcon fontSize="large" />
               </Link>
             </li>
           </ul>
@@ -32,7 +32,7 @@ export class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-  toggle: PropTypes.any,
+  scrollNav: PropTypes.any,
 };
 
 export default NavBar;
