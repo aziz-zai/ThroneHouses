@@ -68,23 +68,18 @@ function HouseDetails() {
     }
     if (house.currentLord !== "") {
       getCurrentLord(house.currentLord);
-      console.log("err2", house);
     }
     if (house.heir !== "") {
       getHeir(house.heir);
-      console.log("err3", house);
     }
     if (house.founder !== "") {
       getFounder(house.founder);
-      console.log("err4", house.founder);
     }
     if (house.cadetBranches.length > 0) {
       house.cadetBranches.map((url) => getCadetBranches(url));
-      console.log("err5", house);
     }
     if (house.swornMembers.length > 0) {
       house.swornMembers.map((url) => getSwornMembers(url));
-      console.log("err6", house);
     }
   };
 
