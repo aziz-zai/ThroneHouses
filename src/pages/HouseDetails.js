@@ -116,7 +116,7 @@ function HouseDetails() {
             {house
               ? house.titles == ""
                 ? "Unknown"
-                : house.titles.map((title) => <p> {title} </p>)
+                : house.titles.map((title) => <p key={title}> {title} </p>)
               : "Unknown"}
           </div>
           <div className="houseAttribute">
@@ -124,7 +124,7 @@ function HouseDetails() {
             {house
               ? house.seats == ""
                 ? "Unknown"
-                : house.seats.map((seats) => <p> {seats} </p>)
+                : house.seats.map((seats) => <p key={seats}> {seats} </p>)
               : "Unknown"}
           </div>
           <div className="houseAttribute">
@@ -157,20 +157,24 @@ function HouseDetails() {
               ? house.ancestralWeapons == ""
                 ? "Unknown"
                 : house.ancestralWeapons.map((ancestralWeapons) => (
-                    <p> {ancestralWeapons} </p>
+                    <p key={ancestralWeapons}> {ancestralWeapons} </p>
                   ))
               : "Unknown"}
           </div>
           <div className="houseAttribute">
             <b>Cadet branches:</b>&nbsp;
             {cadetBranches.length > 0
-              ? cadetBranches.map((cadetBranches) => <p> {cadetBranches} </p>)
+              ? cadetBranches.map((cadetBranches) => (
+                  <p key={cadetBranches}> {cadetBranches} </p>
+                ))
               : "Unknown"}
           </div>
           <div className="houseAttribute">
             <b>Sworn members:</b>&nbsp;
             {swornMembers.length > 0
-              ? swornMembers.map((swornMembers) => <p> {swornMembers} </p>)
+              ? swornMembers.map((swornMembers) => (
+                  <p key={swornMembers}> {swornMembers} </p>
+                ))
               : "Unknown"}
           </div>
         </div>
