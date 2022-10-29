@@ -86,6 +86,9 @@ function HouseDetails() {
   useEffect(() => {
     getHouseByName();
   }, []);
+
+  const slicedArray = (array) => array.slice(0, 10);
+
   return (
     <div className="detailContainer">
       <div className="homeBackground">
@@ -131,8 +134,8 @@ function HouseDetails() {
               {house
                 ? house.titles == ""
                   ? "Unknown"
-                  : house.titles.map((title) => (
-                      <div key={title}> {title} </div>
+                  : slicedArray(house.titles).map((title) => (
+                      <div> {title} </div>
                     ))
                 : "Unknown"}
             </div>
@@ -144,7 +147,9 @@ function HouseDetails() {
               {house
                 ? house.seats == ""
                   ? "Unknown"
-                  : house.seats.map((seats) => <div key={seats}> {seats} </div>)
+                  : slicedArray(house.seats).map((seats) => (
+                      <div> {seats} </div>
+                    ))
                 : "Unknown"}
             </div>
           </div>
@@ -194,9 +199,9 @@ function HouseDetails() {
               {house
                 ? house.ancestralWeapons == ""
                   ? "Unknown"
-                  : house.ancestralWeapons.map((ancestralWeapons) => (
-                      <div key={ancestralWeapons}> {ancestralWeapons} </div>
-                    ))
+                  : slicedArray(house.ancestralWeapons).map(
+                      (ancestralWeapons) => <div> {ancestralWeapons} </div>
+                    )
                 : "Unknown"}
             </div>
           </div>
@@ -205,8 +210,8 @@ function HouseDetails() {
             <div className="houseAttributeValue">
               &nbsp;
               {cadetBranches.length > 0
-                ? cadetBranches.map((cadetBranches) => (
-                    <div key={cadetBranches}> {cadetBranches} </div>
+                ? slicedArray(cadetBranches).map((cadetBranches) => (
+                    <div> {cadetBranches} </div>
                   ))
                 : "Unknown"}
             </div>
@@ -215,8 +220,8 @@ function HouseDetails() {
             <div className="houseAttributeKey">Sworn members</div>
             <div className="houseAttributeValue">
               {swornMembers.length > 0
-                ? swornMembers.map((swornMembers) => (
-                    <div key={swornMembers}> {swornMembers} </div>
+                ? slicedArray(swornMembers).map((swornMembers) => (
+                    <div> {swornMembers} </div>
                   ))
                 : "Unknown"}
             </div>
