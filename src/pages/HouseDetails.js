@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import GotApi from "../api/GotApi";
-import "./HouseDetails";
+import background from "../media/background.jpeg";
+import "./HouseDetails.css";
 
 function HouseDetails() {
   let { houseName } = useParams();
@@ -92,79 +93,91 @@ function HouseDetails() {
   }, []);
   return (
     <div className="detailContainer">
-      <h1 className="detailHouseTitle">{houseName}</h1>
+      <div className="homeBackground">
+        <img src={background}></img>
+      </div>
       <div className="detailHouseBody">
-        <div className="houseAttribute">
-          Region:{house ? house.region : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Coat of arms:
-          {house
-            ? house.coatOfArms == ""
-              ? "Unknown"
-              : house.coatOfArms
-            : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Words:
-          {house ? (house.words == "" ? "Unknown" : house.words) : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Titles:
-          {house
-            ? house.titles == ""
-              ? "Unknown"
-              : house.titles.map((title) => <p> {title} </p>)
-            : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Seats:
-          {house
-            ? house.seats == ""
-              ? "Unknown"
-              : house.seats.map((seats) => <p> {seats} </p>)
-            : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Current lord:{currentLord ? currentLord : "Unknown"}
-        </div>
-        <div className="houseAttribute">Heir:{heir ? heir : "Unknown"}</div>
-        <div className="houseAttribute">
-          Overlord:{overlord ? overlord : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Founded:
-          {house
-            ? house.founded == ""
-              ? "Unknown"
-              : house.founded
-            : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Founder:{founder ? founder : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Ancestral weapons:
-          {house
-            ? house.ancestralWeapons == ""
-              ? "Unknown"
-              : house.ancestralWeapons.map((ancestralWeapons) => (
-                  <p> {ancestralWeapons} </p>
-                ))
-            : "Unknown"}
-        </div>
-        <div className="houseAttribute">
-          Cadet branches:
-          {cadetBranches.length > 0
-            ? cadetBranches.map((cadetBranches) => <p> {cadetBranches} </p>)
-            : "Unknown"}
-          {console.log("cadet", cadetBranches)}
-        </div>
-        <div className="houseAttribute">
-          Sworn members:
-          {swornMembers.length > 0
-            ? swornMembers.map((swornMembers) => <p> {swornMembers} </p>)
-            : "Unknown"}
+        <div className="detailHouseTitle">{houseName}</div>
+
+        <div className="houseAttributeWrapper">
+          <div className="houseAttribute">
+            <b>Region:</b>&nbsp;
+            {house ? house.region : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Coat of arms:</b>&nbsp;
+            {house
+              ? house.coatOfArms == ""
+                ? "Unknown"
+                : house.coatOfArms
+              : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b> Words:</b>&nbsp;
+            {house ? (house.words == "" ? "Unknown" : house.words) : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Titles:</b>&nbsp;
+            {house
+              ? house.titles == ""
+                ? "Unknown"
+                : house.titles.map((title) => <p> {title} </p>)
+              : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Seats:</b>&nbsp;
+            {house
+              ? house.seats == ""
+                ? "Unknown"
+                : house.seats.map((seats) => <p> {seats} </p>)
+              : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Current lord:</b>&nbsp;
+            {currentLord ? currentLord : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Heir:</b>&nbsp;
+            {heir ? heir : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Overlord:</b>&nbsp;
+            {overlord ? overlord : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Founded:</b>&nbsp;
+            {house
+              ? house.founded == ""
+                ? "Unknown"
+                : house.founded
+              : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Founder:</b>&nbsp;
+            {founder ? founder : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Ancestral weapons:</b>&nbsp;
+            {house
+              ? house.ancestralWeapons == ""
+                ? "Unknown"
+                : house.ancestralWeapons.map((ancestralWeapons) => (
+                    <p> {ancestralWeapons} </p>
+                  ))
+              : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Cadet branches:</b>&nbsp;
+            {cadetBranches.length > 0
+              ? cadetBranches.map((cadetBranches) => <p> {cadetBranches} </p>)
+              : "Unknown"}
+          </div>
+          <div className="houseAttribute">
+            <b>Sworn members:</b>&nbsp;
+            {swornMembers.length > 0
+              ? swornMembers.map((swornMembers) => <p> {swornMembers} </p>)
+              : "Unknown"}
+          </div>
         </div>
       </div>
     </div>

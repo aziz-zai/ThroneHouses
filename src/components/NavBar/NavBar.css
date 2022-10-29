@@ -42,7 +42,7 @@
     display: flex;
     align-items: center;
     height: auto;
-    font-family: "Game of Thrones", serif;
+    font-family: "Game of Thrones", sans-serif;
     font-size: 2rem;
     color: rgb(195, 193, 181)
 }
