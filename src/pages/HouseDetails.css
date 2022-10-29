@@ -39,18 +39,21 @@
 
 .houseAttributeWrapper{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 1rem;
-    gap: 0.7rem;
+    gap: 1.7rem;
 }
 .detailHouseTitle{
     font-size: 2.4rem;
     border-bottom: 1px solid white;
     width: 100%;
     text-align: center;
-    font-family:'MedievalSharp', sans-serif
+    font-family:'MedievalSharp', sans-serif;
+    color: rgb(150, 134, 92);
+    
 }
 .detailHouseBody{
     z-index: 4;
@@ -60,24 +63,49 @@
     align-items: center;
     flex-direction: column;
     margin-top: 8rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.houseAttributeValue{
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
     border: 1px solid white;
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0) 0px 40px 120px;
-    padding: 1rem;
-    background-color: rgba(25, 25, 25, 0.575);
+    background-color: rgba(83, 78, 78, 0.127);
+    padding: 0.7rem;
 }
 
-.houseAttribute{
+.houseAttributeKey{
     font-size: 1.4rem;
-    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    transform:translateY(0.85rem) translateX(-0.85rem);
+    background-color: rgb(51, 45, 29); 
+    width: fit-content;
+    color: rgb(195, 193, 181);
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.houseAttributeContainer{
+    display: flex;
+    flex-direction: column;
+    
 }
 
 @media screen and (max-width:450px){
-    .houseAttribute{
+    .houseAttributeValue{
+        font-size: 0.8rem;
+    }
+    .houseAttributeKey{
         font-size: 1rem;
     }
     .detailHouseTitle{
         font-size: 2rem;
+    }
+    .houseAttributeWrapper{
+        gap: 0.5rem;
     }
 
 }

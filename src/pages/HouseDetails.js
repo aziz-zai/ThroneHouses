@@ -95,87 +95,131 @@ function HouseDetails() {
         <div className="detailHouseTitle">{houseName}</div>
 
         <div className="houseAttributeWrapper">
-          <div className="houseAttribute">
-            <b>Region:</b>&nbsp;
-            {house ? house.region : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Region</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {house ? house.region : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Coat of arms:</b>&nbsp;
-            {house
-              ? house.coatOfArms == ""
-                ? "Unknown"
-                : house.coatOfArms
-              : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Coat of arms</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {house
+                ? house.coatOfArms == ""
+                  ? "Unknown"
+                  : house.coatOfArms
+                : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b> Words:</b>&nbsp;
-            {house ? (house.words == "" ? "Unknown" : house.words) : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey"> Words</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {house
+                ? house.words == ""
+                  ? "Unknown"
+                  : house.words
+                : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Titles:</b>&nbsp;
-            {house
-              ? house.titles == ""
-                ? "Unknown"
-                : house.titles.map((title) => <p key={title}> {title} </p>)
-              : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Titles</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {house
+                ? house.titles == ""
+                  ? "Unknown"
+                  : house.titles.map((title) => (
+                      <div key={title}> {title} </div>
+                    ))
+                : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Seats:</b>&nbsp;
-            {house
-              ? house.seats == ""
-                ? "Unknown"
-                : house.seats.map((seats) => <p key={seats}> {seats} </p>)
-              : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Seats</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {house
+                ? house.seats == ""
+                  ? "Unknown"
+                  : house.seats.map((seats) => <div key={seats}> {seats} </div>)
+                : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Current lord:</b>&nbsp;
-            {currentLord ? currentLord : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Current lord</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {currentLord ? currentLord : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Heir:</b>&nbsp;
-            {heir ? heir : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Heir</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {heir ? heir : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Overlord:</b>&nbsp;
-            {overlord ? overlord : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Overlord</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {overlord ? overlord : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Founded:</b>&nbsp;
-            {house
-              ? house.founded == ""
-                ? "Unknown"
-                : house.founded
-              : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Founded</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {house
+                ? house.founded == ""
+                  ? "Unknown"
+                  : house.founded
+                : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Founder:</b>&nbsp;
-            {founder ? founder : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Founder</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {founder ? founder : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Ancestral weapons:</b>&nbsp;
-            {house
-              ? house.ancestralWeapons == ""
-                ? "Unknown"
-                : house.ancestralWeapons.map((ancestralWeapons) => (
-                    <p key={ancestralWeapons}> {ancestralWeapons} </p>
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Ancestral weapons</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {house
+                ? house.ancestralWeapons == ""
+                  ? "Unknown"
+                  : house.ancestralWeapons.map((ancestralWeapons) => (
+                      <div key={ancestralWeapons}> {ancestralWeapons} </div>
+                    ))
+                : "Unknown"}
+            </div>
+          </div>
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Cadet branches</div>
+            <div className="houseAttributeValue">
+              &nbsp;
+              {cadetBranches.length > 0
+                ? cadetBranches.map((cadetBranches) => (
+                    <div key={cadetBranches}> {cadetBranches} </div>
                   ))
-              : "Unknown"}
+                : "Unknown"}
+            </div>
           </div>
-          <div className="houseAttribute">
-            <b>Cadet branches:</b>&nbsp;
-            {cadetBranches.length > 0
-              ? cadetBranches.map((cadetBranches) => (
-                  <p key={cadetBranches}> {cadetBranches} </p>
-                ))
-              : "Unknown"}
-          </div>
-          <div className="houseAttribute">
-            <b>Sworn members:</b>&nbsp;
-            {swornMembers.length > 0
-              ? swornMembers.map((swornMembers) => (
-                  <p key={swornMembers}> {swornMembers} </p>
-                ))
-              : "Unknown"}
+          <div className="houseAttributeContainer">
+            <div className="houseAttributeKey">Sworn members</div>
+            <div className="houseAttributeValue">
+              {swornMembers.length > 0
+                ? swornMembers.map((swornMembers) => (
+                    <div key={swornMembers}> {swornMembers} </div>
+                  ))
+                : "Unknown"}
+            </div>
           </div>
         </div>
       </div>
