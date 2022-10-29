@@ -80,12 +80,12 @@
 .houseAttributeKey{
     font-size: 1.4rem;
     font-weight: bold;
-    transform:translateY(0.85rem) translateX(-0.85rem);
-    background-color: rgb(51, 45, 29); 
+    transform:translateY(1rem) translateX(-0.9rem);
+    background-color: rgba(19, 14, 49, 0.811); 
     width: fit-content;
     color: rgb(195, 193, 181);
-    border-radius: 10px;
-    padding: 2px;
+    border-radius: 9px;
+    padding: 5px;
 }
 
 .houseAttributeContainer{
