@@ -1,0 +1,54 @@
+@import url(//db.onlinewebfonts.com/c/97c4b25dc74e0ab045154e75a8fdd69d?family=Game+of+Thrones);
+@font-face {font-family: "Game of Thrones"; src: url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.eot"); src: url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.woff") format("woff"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.svg#Game of Thrones") format("svg"); }
+.houseCard{
+    border: 1px solid rgba(255, 255, 255, 0.681);
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    padding: 2rem;
+    font-family: "Game of Thrones", sans-serif;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.104);
+}
+
+.houseCard:hover{
+  scale:1.1
+}
+
+.housePreTitle{
+    font-family: "Game of Thrones";
+    color: rgb(195, 193, 181);
+    font-size: 1rem;
+}
+
+.houseTitle{
+    font-family: "Game of Thrones";
+    color: rgb(195, 193, 181);
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width:1500px){
+    .houseTitle{
+        font-size: 1rem;
+    }
+    .housePreTitle{
+        font-size: 0.8rem;
+    }
+    .houseCard{
+        padding: 1.5rem
+    }
+}
+
+@media screen and (max-width:700px){
+    .houseTitle{
+        font-size: 0.7rem;
+    }
+    .housePreTitle{
+        font-size: 0.5rem;
+    }
+
+    .houseCard{
+        padding: 0.7rem
+    }
+}
+
+

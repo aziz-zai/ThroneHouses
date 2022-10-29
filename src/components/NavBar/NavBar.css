@@ -1,0 +1,85 @@
+@import url(//db.onlinewebfonts.com/c/97c4b25dc74e0ab045154e75a8fdd69d?family=Game+of+Thrones);
+@font-face {font-family: "Game of Thrones"; src: url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.eot"); src: url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.woff") format("woff"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/97c4b25dc74e0ab045154e75a8fdd69d.svg#Game of Thrones") format("svg"); }
+.navTrans{
+    background: transparent;
+    height: 5em;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding-top: 1rem;
+}
+.navBlack{
+    background: #292929;
+    height: 5em;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navContainer{
+    display: flex;
+    justify-content: center;
+    height: 5em;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+    max-width: 1100px;
+}
+
+.navTitle{
+    justify-self: flex-start;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: auto;
+    font-family: "Game of Thrones", sans-serif;
+    font-size: 2rem;
+    color: rgb(195, 193, 181)
+}
+
+.navMenu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navItem{
+    height: 80px;
+}
+
+.navLink{
+    color: rgb(195, 193, 181);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navLink:hover{
+    scale: 1.1
+}
+
+@media screen and (max-width:450px){
+    .navTitle{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:300px){
+    .navTitle{
+        font-size: 1rem;
+    }
+}
+

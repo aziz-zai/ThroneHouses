@@ -1,4 +1,3 @@
-import MenuIcon from "@mui/icons-material/Menu";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -9,23 +8,13 @@ export class NavBar extends Component {
     this.props.toggle();
   };
   render() {
-    const { user, dbuser, toggle } = this.props;
+    const { scrollNav } = this.props;
     return (
-      <div className={this.state.nav}>
+      <div className={scrollNav ? "navBlack" : "navTrans"}>
         <div className="navContainer">
-          <Link to="/MeinProfil" className="navLink">
-            <div className="navLogo">project.one</div>
+          <Link to="/" className="navLink">
+            <div className="navTitle">House Of Throne</div>
           </Link>
-          <div className="navMobile" onClick={this.handleOpenStateChange}>
-            <MenuIcon />
-          </div>
-          <ul className="navMenu">
-            <li className="navItem">
-              <Link to="/MeineProjekte" className="navLink">
-                Projekte
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
     );
@@ -33,7 +22,7 @@ export class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-  toggle: PropTypes.any,
+  scrollNav: PropTypes.any,
 };
 
 export default NavBar;

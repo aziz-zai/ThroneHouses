@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Sofia");
+@import url("https://fonts.googleapis.com/css?family=MedievalSharp");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+.detailContainer{
+    background: #0c0c0c;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 30px;
+    min-height: 100vh;
+    height: fit-content;
+    position: relative;
+    z-index: 1;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+
+.detailContainer:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent);
+    z-index: 2;
+}
+
+.homeBackground{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.houseAttributeWrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 0.7rem;
+}
+.detailHouseTitle{
+    font-size: 2.4rem;
+    border-bottom: 1px solid white;
+    width: 100%;
+    text-align: center;
+    font-family:'MedievalSharp', sans-serif
+}
+.detailHouseBody{
+    z-index: 4;
+    color: rgb(195, 193, 181);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0) 0px 40px 120px;
+    padding: 1rem;
+    background-color: rgba(25, 25, 25, 0.575);
+}
+
+.houseAttribute{
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (max-width:450px){
+    .houseAttribute{
+        font-size: 1rem;
+    }
+    .detailHouseTitle{
+        font-size: 2rem;
+    }
+
+}
