@@ -1,47 +1,35 @@
-import React, { Component } from "react";
-import { Navigate } from "react-router";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
-import "./App.css";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import SideBar from "./components/SideBar";
+import Home from "./pages/Home";
+import HouseDetails from "./pages/HouseDetails";
 
-export class App extends Component {
-  constructor(props) {
-    super(props);
+export function App() {
+  const [scrollNav, setScrollNav] = useState(false);
 
-    // Init the state
-    this.state = {
-      Open: "SideBarContainerClosed",
-    };
-  }
-
-  handleOpenStateChange = () => {
-    if (this.state.Open == "SideBarContainerOpen") {
-      this.setState({
-        Open: "SideBarContainerClosed",
-      });
-    }
-    if (this.state.Open == "SideBarContainerClosed") {
-      this.setState({
-        Open: "SideBarContainerOpen",
-      });
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
     }
   };
-  render() {
-    return (
-      <>
-        <Router>
-          <SideBar toggle={this.handleOpenStateChange} Open={this.state.Open} />
-          <NavBar toggle={this.handleOpenStateChange} />
-        </Router>
-      </>
-    );
-  }
-}
 
-export default App;
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
+  return (
+    <>
+      <Router>
+        <NavBar scrollNav={scrollNav} />
+        <Routes>
+          <Route>
+            <Route path="/Details/:houseName" element={<HouseDetails />} />
+            <Route path="/" element={<Home />} />
+          </Route>
+        </Routes>
+      </Router>
+    </>
+  );
+}
