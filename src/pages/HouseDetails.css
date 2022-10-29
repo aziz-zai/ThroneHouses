@@ -43,12 +43,14 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 50%;
     margin-top: 1rem;
     gap: 1.7rem;
 }
 .detailHouseTitle{
     font-size: 2.4rem;
     border-bottom: 1px solid white;
+    border-top:1px solid white;
     width: 100%;
     text-align: center;
     font-family:'MedievalSharp', sans-serif;
@@ -73,7 +75,7 @@
     border: 1px solid white;
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0) 0px 40px 120px;
-    background-color: rgba(83, 78, 78, 0.127);
+    background-color: rgba(255, 255, 255, 0.104);
     padding: 0.7rem;
 }
 
@@ -81,7 +83,7 @@
     font-size: 1.4rem;
     font-weight: bold;
     transform:translateY(1rem) translateX(-0.9rem);
-    background-color: rgba(19, 14, 49, 0.811); 
+    background-color: rgba(14, 10, 36, 1); 
     width: fit-content;
     color: rgb(195, 193, 181);
     border-radius: 9px;
@@ -94,6 +96,12 @@
     
 }
 
+@media screen and (max-width:1200px){
+    .houseAttributeWrapper{
+        width: 100%;
+    }
+
+}
 @media screen and (max-width:450px){
     .houseAttributeValue{
         font-size: 0.8rem;
