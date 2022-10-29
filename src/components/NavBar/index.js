@@ -1,4 +1,3 @@
-import SearchIcon from "@mui/icons-material/Search";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -16,13 +15,6 @@ export class NavBar extends Component {
           <Link to="/" className="navLink">
             <div className="navTitle">House Of Throne</div>
           </Link>
-          <ul className="navMenu">
-            <li className="navItem">
-              <Link to="/MeineProjekte" className="navLink">
-                <SearchIcon fontSize="large" />
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
     );

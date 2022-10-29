@@ -11,6 +11,7 @@
     top: 0;
     z-index: 1000;
     width: 100%;
+    padding-top: 1rem;
 }
 .navBlack{
     background: #292929;
@@ -27,7 +28,7 @@
 
 .navContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 5em;
     z-index: 1;
     width: 100%;
@@ -42,7 +43,7 @@
     align-items: center;
     height: auto;
     font-family: "Game of Thrones", serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: rgb(195, 193, 181)
 }
 
@@ -68,10 +69,14 @@
 }
 
 .navLink:hover{
-    scale: 1.2
+    scale: 1.1
 }
 
-
+@media screen and (max-width:450px){
+    .navTitle{
+        font-size: 1.2rem;
+    }
+}
 @media screen and (max-width:300px){
     .navTitle{
         font-size: 1rem;

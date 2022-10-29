@@ -25,6 +25,7 @@
 }
 
 .homeBody{
+    width: 100%;
     margin-top: 6rem;
     z-index: 3;
 }
@@ -98,7 +99,48 @@
     background-color: rgba(128, 128, 128, 0.118);
   }
 
-  
+  .searchBar{
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: 1rem;
+  }
+
+  .searchBarContainer{
+      border: 1px solid white;
+      border-radius: 10px;
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+  }
+  .searchBarIcon{
+      color: rgb(195, 193, 181);
+      cursor: pointer;
+  }
+  .searchField{
+    color: rgb(195, 193, 181);
+    height: 2rem;
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    box-shadow: none;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+  }
+  .searchField:placeholder{
+    color: rgb(195, 193, 181);
+    font-size: 1.2rem;
+  }
+
+ @media screen and (max-width:450px){
+    .searchField{
+        height: 0.5rem;
+    }
+}
 @media screen and (max-width:340px){
     .paginationWrapper{
         font-size: 0.5rem;
